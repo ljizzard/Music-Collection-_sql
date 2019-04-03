@@ -40,7 +40,13 @@ class Artist
     sql = "UPDATE artist SET (artist_name) = ($1) WHERE id = $2"
     values = [@artist_name, @id]
     SqlRunner.run(sql, values)
-  end  
+  end
+
+  def delete()
+    sql = "DELETE FROM artist_name WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
 
 
 end
